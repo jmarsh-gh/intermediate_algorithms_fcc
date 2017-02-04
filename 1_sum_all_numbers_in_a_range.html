@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sum all numbers in a range</title>
+</head>
+<body>
+<h1>Test</h1>
+<script language="Javascript" type="text/javascript">
+
+console.log("Test");
+	// We'll pass you an array of two numbers. Return the sum of those two numbers and all numbers between 	them.
+	// The lowest number will not always come first.
+
+
+
+	// //My First Solution
+	function sumAll(arr) {
+		//get the range  
+		var min = Math.min(arr[0], arr[1]);
+		var max = Math.max(arr[0], arr[1]);
+		var myArr = [];
+
+		for(var x = max; x >= min; x--){
+			myArr.push(x);
+		}
+
+		//reduce/sum the range
+		function callBackSum(a,b){
+			return a + b;  
+		}
+		return myArr.reduce(callBackSum);
+	}
+
+	console.log(sumAll([1, 4]));
+
+	//Refactoring with arrow function
+	function sumAll(arr) {
+		//get the range
+		var min = Math.min(...arr);
+		var max = Math.max(...arr);
+		var myArr = [];
+
+		for(var x = max; x >= min; x--){
+			myArr.push(x);
+		}
+		//sum the range
+		return myArr.reduce((a,b) => a + b);
+	}
+	console.log(sumAll([1, 4]));
+
+
+	//Recursive Solution
+	function sumAll(arr) {
+  		arr.sort((a,b) => a - b); 
+  		console.log(arr);
+		if(arr[1] == arr[0]){
+			return arr[0];
+		}
+		return arr[1] + sumAll([arr[0], arr[1]-1]); 
+	}
+	console.log(sumAll([5, 1]));
+
+	//Wiki solution
+	function sumAll(arr) {
+		var sum = 0;
+		for (var i = Math.min(...arr); i <= Math.max(...arr); i++){
+			sum += i;
+		}
+		return sum;
+	}
+	console.log(sumAll([1, 4]));
+
+</script>
+</body>
+</html>
