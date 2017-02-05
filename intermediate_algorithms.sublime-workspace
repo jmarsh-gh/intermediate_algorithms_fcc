@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"call",
+				"callBackArr"
+			],
+			[
 				"log",
 				"logoID"
 			],
@@ -84,36 +88,23 @@
 	"buffers":
 	[
 		{
-			"file": "1 sum_all_numbers_in_a_range.html",
+			"file": "2_diff_two_arrays.html",
 			"settings":
 			{
-				"buffer_size": 1429,
+				"buffer_size": 2672,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Intermediate/Sum all Numbers in a Range.md",
+			"contents": "# Diff Two Arrays\n\nFree Code Camp intermediate algorithms.\n\nCompare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.\n\nHint:\n\n    Comparison Operators\n\n    Array.prototype.slice()\n\n    Array.prototype.filter()\n\n    Array.prototype.indexOf()\n\n    Array.prototype.concat()\n\n## My First Solution\n\n```javascript\n\tfunction diffArray(arr1, arr2) {\n\t\tfunction callBack(a){\n  \t\t\tfor(var x in arr1){\n  \t\t\t\tif(arr1[x] == a){\n  \t\t\t\t\treturn false;\n  \t\t\t\t} \n  \t\t\t}\n  \t\t\treturn true;\n  \t\t}\n  \t\tfunction callBack2(a){\n  \t\t\tfor(var x in arr2){\n  \t\t\t\tif(arr2[x] == a){\n  \t\t\t\t\treturn false;\n  \t\t\t\t} \n  \t\t\t}\n  \t\t\treturn true;\n  \t\t}  \n  \n  \t\tvar newArr1 = arr2.filter(callBack);\n  \t\tvar newArr2 = arr1.filter(callBack2);\n  \t\treturn newArr1.concat(newArr2);\n\t}\n\n\tconsole.log(diffArray([1, \"calf\", 3, \"piglet\"], [7, \"filly\", 3]));\n```\n\nThis solution uses the Array.filter() method to find the differences between the two arrays.\n\nArray.filter() feeds each element of an array to a callback function and any element that returns true is pushed to a new array.\n\nFor this algorithm, the callback function needs to return true only if the element being compared from the first array is NOT present in the second array.\n\nSo to find any elements in arr1 that are not present in arr2, we need to do the following:\n\n```javascript\n\tfunction callBack(a){\n\t\tfor(var x in arr1){\n\t\t\tif(arr1[x] == a){\n\t\t\t\treturn false;\n\t\t\t} \n\t\t}\n\t\treturn true;\n\t}\n\tvar newArr1 = arr2.filter(callBack);\n```\n\nThis runs each element of arr2 through callBack() which in turn compares that element to each element of arr1. If there is a match, callBack() returns false and that element of arr1 is not included in newArr1 (the new \"filtered\" array).\n\nIf none of the elements of arr1 match the element fed to callBack() then it returns true and that element is included in newArr1. So in our example:\n\n```javascript\n\tdiffArray([1, \"calf\", 3, \"piglet\"], [7, \"filly\", 3]);\n\t//callBack(7) = true\n\t//callBack(\"filly\") = true\n\t//callBack(3) = false\n\t//newArr1 = [7, \"filly\"]\n```\n\nOf course this only tells us which elements of arr2 are not present in arr1. We also need to know which elements of arr1 are not present in arr2.\n\nFor now a second callBack function, callBack2(), is used to compare the elements of arr1 to arr2 (this will be refactored later):\n\n```javascript\n\tfunction callBack2(a){\n\t\tfor(var x in arr2){\n\t\t\tif(arr2[x] == a){\n\t\t\t\treturn false;\n\t\t\t} \n\t\t}\n\t\treturn true;\n\t}\n\tvar newArr2 = arr1.filter(callBack2);\n```\n\nWhich in our example returns:\n\n```javascript\n\tdiffArray([1, \"calf\", 3, \"piglet\"], [7, \"filly\", 3]);\n\t//callBack2(1) = true\n\t//callBack2(\"calf\") = true\n\t//callBack2(3) = false\n\t//callBack2(\"piglet\") = true\n\t//newArr2 = [1, \"calf\", \"piglet\"]\n```\n\nFinally we need to join newArr1 with newArr2 to create the final array containing all the differences. To do this, the Array.concat() method is used:\n\n```javascript\n\treturn newArr1.concat(newArr2);\n\t//returns [7, \"filly\", 1, \"calf\", \"piglet\"]\n```\n\n## My Solution Refactored\n\nThe above solution has two callback functions. This is useful to demonstrate that each array has to be filtered against the other, but the code isn't DRY.\n\nWe need to make the callback function array agnostic; it needs to be able to take an array as an argument rather than use a named array within the code block.\n\nThe Array.filter() method can take an optional second argument call thisValue. Note, the first argument is the call back function which itself automatically feeds value, index and array (these do not have to be named when calling, the filter() method does it for you).\n\nThe thisValue argument can be called inside the function using \"this\". Like so:\n\n```javascript\n\tfunction callBack(value){\n  \t\tfor(var x in this){\n  \t\t\tif(this[x] == value){\n  \t\t\t\treturn false;\n  \t\t\t} \n  \t\t}\n  \t\treturn true;\n  \t}\n\n  \tvar newArr1 = arr2.filter(callBack, arr1);\n  \tvar newArr2 = arr1.filter(callBack, arr2);\n```\n\nIn the first call \"this\" represents arr1 and it is used in the FOR/IN loop to compare each value of arr1 to the current \"value\" of arr2 fed to the function by the filter method.\n\nWe can remove the variables and call filter() directly in the return statements allong with concat():\n\n```javascript\n\tfunction diffArray(arr1, arr2) {\n\t\tfunction callBack(value){\n  \t\t\tfor(var x in this){\n  \t\t\t\tif(this[x] == value){\n  \t\t\t\t\treturn false;\n  \t\t\t\t} \n  \t\t\t}\n  \t\t\treturn true;\n  \t\t}\n  \t\treturn arr2.filter(callBack, arr1).concat(arr1.filter(callBack, arr2));\n\t}\n\tconsole.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));\t\n```\n\n## Wiki Solution\n\nThe basic wiki solution uses a indexOf() in two FOR loops to compare each array. Any element that returns -1 (no index) is pushed to newArr.\n\n```javascript\n\tfunction diffArray(arr1, arr2) {\n\t  var newArr = [];\n\t  // Looping through arr1 to find elements that do not exist in arr2  \n\t  for (var i = 0; i < arr1.length; i++) {\n\t    if (arr2.indexOf(arr1[i]) === -1){\n\t      // Pushing the unique to arr1 elements to the newArr\n\t      newArr.push(arr1[i]);\n\t    }\n\t  }\n\t  // Looping through arr2 to find elements that do not exist in arr1\n\t  for (var j = 0; j < arr2.length; j++) {\n\t    if (arr1.indexOf(arr2[j]) === -1){\n\t      // Pushing the unique to arr2 elements to the newArr    \n\t      newArr.push(arr2[j]);\n\t    }\n\t  }\n\n\t  return newArr;\n\t}\n\n\tdiffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);\n```\n\nThe advanced solution uses Array.includes() to compare the arrays. The includes() method determines whether an array includes a certain element, returning true or false as appropriate.\n\n```javascript\nfunction diffArray(arr1, arr2) {\n    return arr1.filter(el => !arr2.includes(el)).concat(arr2.filter(el => !arr1.includes(el)))\n}\n\ndiffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);\n```\n\nThis one liner looks more complicated than it is, the ES6 arrow functions in particular. To break it down:\n\n```javascript\n\tarr1.filter(el => !arr2.includes(el))\n```\n\nThe Array.filter() callback function is written directly in the parenthesis. \"el\" is the argument or value of arr1 being fed to the function by filter(). \n\narr2.includes(el) checks \"el\" against each element of arr2 and returns true if there is a match. We want to keep only the differences, so we need to return true if there is no match, so the ! is used.\n\nTo visualise this easier, we can separate out the callback function from the filter() and use thisValue again:\n\n```javascript\n\tfunction diffArray(arr1, arr2) {\n\t\tfunction callBack(el){\n  \t\t\treturn !this.includes(el);\n  \t\t}\n\n\t    return arr1.filter(callBack, arr2).concat(arr2.filter(callBack, arr1));\n\t}\n\n\tconsole.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));\n```\n\ncallBack only returns true when \"el\" is not included in the array currently represented by \"this\".\n\nIn summary the advanced solution replaces my FOR/IN loop with Array.includes() then writes the callBack function as an arrow function directly in the filter() call. Very nice!\n\n\n\n\n",
+			"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Intermediate/Diff Two Arrays.md",
+			"file_size": 7219,
+			"file_write_time": 131307603936948689,
 			"settings":
 			{
-				"buffer_size": 2178,
+				"buffer_size": 6995,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/schrobot/Dropbox/VS/Algorithms/FCC Basic/2 Factorialise a Number.htm",
-			"settings":
-			{
-				"buffer_size": 1037,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Projects/Score Keeper.md",
-			"settings":
-			{
-				"buffer_size": 10937,
 				"line_ending": "Windows"
 			}
 		},
@@ -126,11 +117,12 @@
 			}
 		},
 		{
-			"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Shortcuts.md",
+			"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Intermediate.md",
 			"settings":
 			{
-				"buffer_size": 1370,
-				"line_ending": "Unix"
+				"buffer_size": 94,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -175,6 +167,9 @@
 	},
 	"file_history":
 	[
+		"/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Shortcuts.md",
+		"/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Projects/Score Keeper.md",
+		"/C/Users/schrobot/Dropbox/VS/Algorithms/FCC Basic/2 Factorialise a Number.htm",
 		"/C/Users/schrobot/Dropbox/VS/Algorithms/FCC Basic/1 Reverse a string.htm",
 		"/C/Users/schrobot/Dropbox/github/100DaysOfCode/log.md",
 		"/C/Users/schrobot/Dropbox/github/twitch_viewer_fcc/todo.md",
@@ -297,19 +292,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "1 sum_all_numbers_in_a_range.html",
+					"file": "2_diff_two_arrays.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1429,
+						"buffer_size": 2672,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1013,
-								747
+								2643,
+								2410
 							]
 						],
 						"settings":
@@ -318,7 +313,7 @@
 							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 282.0,
+						"translation.y": 1350.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -326,19 +321,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Intermediate/Sum all Numbers in a Range.md",
+					"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Intermediate/Diff Two Arrays.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2178,
+						"buffer_size": 6995,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1794,
-								1794
+								6281,
+								6281
 							]
 						],
 						"settings":
@@ -346,7 +341,7 @@
 							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 696.0,
+						"translation.y": 3845.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -354,63 +349,6 @@
 				},
 				{
 					"buffer": 2,
-					"file": "/C/Users/schrobot/Dropbox/VS/Algorithms/FCC Basic/2 Factorialise a Number.htm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1037,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								569,
-								569
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 162.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Projects/Score Keeper.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10937,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 594.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Github-Wiki-Guide.md",
 					"semi_transient": false,
 					"settings":
@@ -422,8 +360,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								36,
+								13
 							]
 						],
 						"settings":
@@ -436,24 +374,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Shortcuts.md",
+					"buffer": 3,
+					"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Intermediate.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1370,
+						"buffer_size": 94,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								94,
+								94
 							]
 						],
 						"settings":
@@ -464,11 +402,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 4,
 					"file": "/C/Users/schrobot/Dropbox/github/100DaysOfCode/log.md",
 					"semi_transient": false,
 					"settings":
@@ -489,10 +427,10 @@
 							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 199.0,
+						"translation.y": 217.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
