@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Diff Two Arrays</title>
+</head>
+<body>
+<h1>Test</h1>
+<script language="Javascript" type="text/javascript">
+
+	console.log("Test");
+	//ARRAY to push numerals to
+  	//if num > 1000 get number of M and the remainder
+  	//if num > 500 get number of D and remainder
+  	//if num > 100 get number of C and remainder
+  	//if num > 50 get number of L and remainder and so on.
+
+  	//OR get length then use each digit for amount of corresponding numeral
+  	//2100  string[0] = 2xM then string[1]=1xC
+
+  	// write a function for the loop and have the second paramater be the numeral?
+  	// wtf is this??!!
+  	function convertToRoman(num) {
+  		var numeralsArr = [];
+  		num = num.toString();
+ 		if(num.length == 4){
+ 			for(var x = 1; x <= num[0]; x++){
+ 				numeralsArr.push("M");
+ 			};
+ 			num = num.slice(1);
+ 		} 
+ 		if(num.length == 3 && num[0] >= 5){
+ 			numeralsArr.push("D");
+ 			for(var x = 1; x <= num[0] % 5; x++){
+ 				numeralsArr.push("C");
+ 			};
+ 			num = num.slice(1);
+ 		} else if(num.length == 3){
+ 			for(var x = 1; x <= num[0]; x++){
+ 				numeralsArr.push("C");
+ 			};
+ 			num = num.slice(1);
+ 		}
+ 		if(num.length == 2 && num[0] >= 5){
+ 			numeralsArr.push("L");
+ 			for(var x = 1; x <= num[0] % 5; x++){
+ 				numeralsArr.push("X");
+ 			};
+ 			num = num.slice(1);
+ 		} else if(num.length == 2) {
+ 			for(var x = 1; x <= num[0]; x++){
+ 				numeralsArr.push("X");
+ 			};
+ 			num = num.slice(1);
+ 		}
+ 		if(num.length == 1 && num[0] >= 5){
+ 			numeralsArr.push("V");
+ 			for(var x = 1; x <= num[0] % 5; x++){
+ 				numeralsArr.push("I");
+ 			};
+ 			num = num.slice(1);
+ 		} else if(num.length == 1){
+ 			for(var x = 1; x <= num[0]; x++){
+ 				numeralsArr.push("I");
+ 			};
+ 			num = num.slice(1);
+ 		}
+
+ 		console.log(num);
+ 		console.log(numeralsArr);
+	}
+
+	convertToRoman(36);
+	
+
+
+</script>
+</body>
+</html>

@@ -9,85 +9,85 @@
 
 	console.log("Test");
 
-	// Compare two arrays and return a new array with any items only found in one of the two given 
-	// arrays, but not both. In other words, return the symmetric difference of the two arrays.
+	Compare two arrays and return a new array with any items only found in one of the two given 
+	arrays, but not both. In other words, return the symmetric difference of the two arrays.
 	
-	// My First Solution
-	// function diffArray(arr1, arr2) {
-	// 	var newArr = [];
-	// 	function callBack(a){
- //  			for(var x in arr1){
- //  				if(arr1[x] == a){
- //  					return false;
- //  				} 
- //  			}
- //  			return true;
- //  		}
- //  		function callBack2(a){
- //  			for(var x in arr2){
- //  				if(arr2[x] == a){
- //  					return false;
- //  				} 
- //  			}
- //  			return true;
- //  		}  
+	My First Solution
+	function diffArray(arr1, arr2) {
+		var newArr = [];
+		function callBack(a){
+  			for(var x in arr1){
+  				if(arr1[x] == a){
+  					return false;
+  				} 
+  			}
+  			return true;
+  		}
+  		function callBack2(a){
+  			for(var x in arr2){
+  				if(arr2[x] == a){
+  					return false;
+  				} 
+  			}
+  			return true;
+  		}  
   
- //  		var newArr1 = arr2.filter(callBack);
- //  		var newArr2 = arr1.filter(callBack2);
- //  		return newArr1.concat(newArr2);
-	// }
+  		var newArr1 = arr2.filter(callBack);
+  		var newArr2 = arr1.filter(callBack2);
+  		return newArr1.concat(newArr2);
+	}
 
-	// console.log(diffArray([1, "calf", 3, "piglet"], [7, "filly", 3]));
+	console.log(diffArray([1, "calf", 3, "piglet"], [7, "filly", 3]));
 
-	// // First Solution Refactored
+	// First Solution Refactored
 
-	// function diffArray(arr1, arr2) {
-	// 	function callBack(value){
- //  			for(var x in this){
- //  				if(this[x] == value){
- //  					return false;
- //  				} 
- //  			}
- //  			return true;
- //  		}
- //  		return arr2.filter(callBack, arr1).concat(arr1.filter(callBack, arr2));
-	// }
-	// console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
+	function diffArray(arr1, arr2) {
+		function callBack(value){
+  			for(var x in this){
+  				if(this[x] == value){
+  					return false;
+  				} 
+  			}
+  			return true;
+  		}
+  		return arr2.filter(callBack, arr1).concat(arr1.filter(callBack, arr2));
+	}
+	console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
 
-	// // Wiki Solution Basic
-	// function diffArray(arr1, arr2) {
-	//   var newArr = [];
-	//   // Looping through arr1 to find elements that do not exist in arr2  
-	//   for (var i = 0; i < arr1.length; i++) {
-	//     if (arr2.indexOf(arr1[i]) === -1){
-	//       // Pushing the unique to arr1 elements to the newArr
-	//       newArr.push(arr1[i]);
-	//     }
-	//   }
-	//   // Looping through arr2 to find elements that do not exist in arr1
-	//   for (var j = 0; j < arr2.length; j++) {
-	//     if (arr1.indexOf(arr2[j]) === -1){
-	//       // Pushing the unique to arr2 elements to the newArr    
-	//       newArr.push(arr2[j]);
-	//     }
-	//   }
+	// Wiki Solution Basic
+	function diffArray(arr1, arr2) {
+	  var newArr = [];
+	  // Looping through arr1 to find elements that do not exist in arr2  
+	  for (var i = 0; i < arr1.length; i++) {
+	    if (arr2.indexOf(arr1[i]) === -1){
+	      // Pushing the unique to arr1 elements to the newArr
+	      newArr.push(arr1[i]);
+	    }
+	  }
+	  // Looping through arr2 to find elements that do not exist in arr1
+	  for (var j = 0; j < arr2.length; j++) {
+	    if (arr1.indexOf(arr2[j]) === -1){
+	      // Pushing the unique to arr2 elements to the newArr    
+	      newArr.push(arr2[j]);
+	    }
+	  }
 
-	//   return newArr;
-	// }
+	  return newArr;
+	}
 
-	// console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
+	console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
 
-	// //Wiki Solution Advanced 
+	//Wiki Solution Advanced 
 
-	// function diffArray(arr1, arr2) {
-	//     return arr1
-	//       .filter(el => !arr2.includes(el))
-	//       .concat(
-	//         arr2.filter(el => !arr1.includes(el))
-	//       )
-	// }
+	function diffArray(arr1, arr2) {
+	    return arr1
+	      .filter(el => !arr2.includes(el))
+	      .concat(
+	        arr2.filter(el => !arr1.includes(el))
+	      )
+	}
 
-	// console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
+	console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
 
 	// Refactored Wiki Solution for clarity
 
