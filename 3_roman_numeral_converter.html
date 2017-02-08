@@ -19,58 +19,111 @@
 
   	// write a function for the loop and have the second paramater be the numeral?
   	// wtf is this??!!
-  	function convertToRoman(num) {
-  		var numeralsArr = [];
-  		num = num.toString();
- 		if(num.length == 4){
- 			for(var x = 1; x <= num[0]; x++){
- 				numeralsArr.push("M");
- 			};
- 			num = num.slice(1);
- 		} 
- 		if(num.length == 3 && num[0] >= 5){
- 			numeralsArr.push("D");
- 			for(var x = 1; x <= num[0] % 5; x++){
- 				numeralsArr.push("C");
- 			};
- 			num = num.slice(1);
- 		} else if(num.length == 3){
- 			for(var x = 1; x <= num[0]; x++){
- 				numeralsArr.push("C");
- 			};
- 			num = num.slice(1);
- 		}
- 		if(num.length == 2 && num[0] >= 5){
- 			numeralsArr.push("L");
- 			for(var x = 1; x <= num[0] % 5; x++){
- 				numeralsArr.push("X");
- 			};
- 			num = num.slice(1);
- 		} else if(num.length == 2) {
- 			for(var x = 1; x <= num[0]; x++){
- 				numeralsArr.push("X");
- 			};
- 			num = num.slice(1);
- 		}
- 		if(num.length == 1 && num[0] >= 5){
- 			numeralsArr.push("V");
- 			for(var x = 1; x <= num[0] % 5; x++){
- 				numeralsArr.push("I");
- 			};
- 			num = num.slice(1);
- 		} else if(num.length == 1){
- 			for(var x = 1; x <= num[0]; x++){
- 				numeralsArr.push("I");
- 			};
- 			num = num.slice(1);
- 		}
 
- 		console.log(num);
- 		console.log(numeralsArr);
-	}
+  	// agnostic loop with num.length deciding which array to take numeral from.
+ //  	function convertToRoman(num) {
+ //  		var numeralsArr = [];
+ //  		num = num.toString();
+ // 		if(num.length == 4){
+ // 			for(var x = 1; x <= num[0]; x++){
+ // 				numeralsArr.push("M");
+ // 			};
+ // 			num = num.slice(1);
+ // 		} 
+ // 		if(num.length == 3 && num[0] == 9){
+ // 			numeralsArr.push("CM");
+ // 			num = num.slice(1);
+ // 		} else if(num.length == 3 && num[0] >= 5){
+ // 			numeralsArr.push("D");
+ // 			for(var x = 1; x <= num[0] % 5; x++){
+ // 				numeralsArr.push("C");
+ // 			};
+ // 			num = num.slice(1);
+ // 		} else if(num.length == 3){
+ // 			if(num[0]==4){
+ // 				numeralsArr.push("CD");
+ // 			} else {
+ // 				for(var x = 1; x <= num[0]; x++){
+ // 					numeralsArr.push("C");
+ // 				};
+ // 			}
+ // 			num = num.slice(1);
+ // 		}
+ // 		if(num.length == 2 && num[0] == 9){
+ // 			numeralsArr.push("XC");
+ // 			num = num.slice(1);
+ // 		} 
+ // 		else if(num.length == 2 && num[0] >= 5){
+ // 			numeralsArr.push("L");
+ // 			for(var x = 1; x <= num[0] % 5; x++){
+ // 				numeralsArr.push("X");
+ // 			};
+ // 			num = num.slice(1);
+ // 		} else if(num.length == 2) {
+ // 			if(num[0] == 4){
+ // 				numeralsArr.push("XL");
+ // 			} else {
+ // 				for(var x = 1; x <= num[0]; x++){
+ // 					numeralsArr.push("X");
+ // 				};
+ // 			}
+ // 			num = num.slice(1);
+ // 		}
+ // 		if(num.length == 1 && num[0] == 9){
+ // 			numeralsArr.push("IX");
+ // 			num = num.slice(1);
+ // 		} 
+ // 		else if(num.length == 1 && num[0] >= 5){
+ // 			numeralsArr.push("V");
+ // 			for(var x = 1; x <= num[0] % 5; x++){
+ // 				numeralsArr.push("I");
+ // 			};
+ // 			num = num.slice(1);
+ // 		} else if(num.length == 1){
+ // 			if(num[0] == 4){
+ // 				numeralsArr.push("IV");
+ // 			} else {
+ // 				for(var x = 1; x <= num[0]; x++){
+ // 					numeralsArr.push("I");
+ // 				};
+ // 			}
+ // 			num = num.slice(1);
+ // 		}
 
-	convertToRoman(36);
+ // 		console.log(num);
+ // 		console.log(numeralsArr);
+	// }
+
+	// convertToRoman(499);
 	
+var arr = 	[
+			["I", "II","III","IV","V","VI","VII","VIII","IX"],
+			["X","XX","XXX","XL","L","LX","LXX","LXXX","XC"],
+			["C","CC","CCC","CD","D","DC","DCC","DCCC","CM"],
+			["M"]
+			];
+
+
+function block(num){
+	var numeralsArr = [];
+	num = num.toString();
+		if(num.length == 4){
+			for(var i = 1; i <= num[0]; i++){
+				numeralsArr.push("M");
+			}
+			num = num.slice(1);
+		}; 
+		for(var x = num.length; x > 0; x--){
+			//console.log(arr[x - 1][num[0]]);
+			numeralsArr.push(arr[x-1][num[0]-1]);
+			num = num.slice(1);
+		}
+		console.log(numeralsArr);
+		console.log("test");
+};
+
+(block(1499));
+
 
 
 </script>

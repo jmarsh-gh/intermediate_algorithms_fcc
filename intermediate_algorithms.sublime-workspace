@@ -95,7 +95,7 @@
 			"file": "3_roman_numeral_converter.html",
 			"settings":
 			{
-				"buffer_size": 1829,
+				"buffer_size": 1850,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -297,15 +297,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1829,
+						"buffer_size": 1850,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								609,
-								609
+								630,
+								630
 							]
 						],
 						"settings":
@@ -314,7 +314,7 @@
 							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 18.0,
+						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
