@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Diff Two Arrays</title>
+	<title>Roman Numeral Converter</title>
 </head>
 <body>
 <h1>Test</h1>
@@ -100,18 +100,17 @@ var arr = 	[
 			["I", "II","III","IV","V","VI","VII","VIII","IX"],
 			["X","XX","XXX","XL","L","LX","LXX","LXXX","XC"],
 			["C","CC","CCC","CD","D","DC","DCC","DCCC","CM"],
-			["M"]
 			];
-
 
 function block(num){
 	var numeralsArr = [];
 	num = num.toString();
-		if(num.length == 4){
-			for(var i = 1; i <= num[0]; i++){
+		if(num.length > 3){
+			var holder = num.slice(0, num.length - 3);
+			for(var i = 1; i <= holder; i++){
 				numeralsArr.push("M");
 			}
-			num = num.slice(1);
+			num = num.slice(holder.length);
 		}; 
 		for(var x = num.length; x > 0; x--){
 			//console.log(arr[x - 1][num[0]]);
@@ -122,7 +121,7 @@ function block(num){
 		console.log("test");
 };
 
-(block(1499));
+block(10499);
 
 
 
