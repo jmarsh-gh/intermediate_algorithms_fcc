@@ -110,7 +110,7 @@
 			"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Intermediate/Roman Numeral Converter.md",
 			"settings":
 			{
-				"buffer_size": 1528,
+				"buffer_size": 1572,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -136,7 +136,7 @@
 			"file": "/C/Users/schrobot/Dropbox/github/100DaysOfCode/log.md",
 			"settings":
 			{
-				"buffer_size": 14241,
+				"buffer_size": 14543,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -294,7 +294,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -332,15 +332,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1528,
+						"buffer_size": 1572,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1521,
-								1521
+								1565,
+								1565
 							]
 						],
 						"settings":
@@ -351,7 +351,7 @@
 						"translation.y": 90.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -418,15 +418,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14241,
+						"buffer_size": 14543,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								14062,
-								14062
+								14298,
+								14298
 							]
 						],
 						"settings":
@@ -434,10 +434,10 @@
 							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 6669.0,
+						"translation.y": 6684.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
