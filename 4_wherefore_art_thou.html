@@ -4,19 +4,28 @@
 	<title>Wherefore art thou</title>
 </head>
 <body>
-<h1>Test</h1>
 <script language="Javascript" type="text/javascript">
-
+	//http://stackoverflow.com/questions/36464821/check-if-all-elements-in-an-array-are-present-in-another
 	console.log("Test");
 	
 	function whatIsInAName(collection, source) {
-  		// What's in a name?
   		var arr = [];
-  		// Only change code below this line
-  		alert("test");
+  		var keysArr = Object.keys(source);
+ 
+  		function callBack(obj){
+    		return (keysArr.every(function(value){
+					return (obj.hasOwnProperty(value) && (obj[value] == source[value]));
+				}));
+  		}
   
-  		// Only change code above this line
-  		return arr;
+  		//Loop through collection
+  		for(var x in collection){
+    		if(callBack(collection[x])){
+      		arr.push(collection[x]);
+    		}
+  		}
+  
+  		console.log(arr);
 	}
 
 	whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
