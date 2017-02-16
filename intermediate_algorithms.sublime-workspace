@@ -108,7 +108,8 @@
 			"file": "4_wherefore_art_thou.html",
 			"settings":
 			{
-				"buffer_size": 560,
+				"buffer_size": 882,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
@@ -293,7 +294,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -330,15 +331,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 560,
+						"buffer_size": 882,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								323,
-								323
+								259,
+								259
 							]
 						],
 						"settings":
@@ -349,7 +350,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -379,7 +380,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -432,10 +433,10 @@
 							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 7605.0,
+						"translation.y": 7620.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
