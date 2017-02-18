@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Wherefore art thou</title>
+	<title>Search And Replace</title>
 </head>
 <body>
 <script language="Javascript" type="text/javascript">
@@ -9,11 +9,17 @@
 	console.log("TestThree");
 	
 	function myReplace(str, before, after) {
-    
-    return str;
-  }
 
-  myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+		if(before.charCodeAt(0) >=65 && before.charCodeAt(0)<=90){
+    		after = after.charAt(0).toUpperCase() + after.slice(1);
+  		}
+
+  		str = str.replace(before, after);
+
+    	return str;
+  	}
+
+  console.log(myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"));
   
   
 </script>

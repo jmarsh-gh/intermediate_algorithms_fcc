@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pig Latin</title>
+</head>
+<body>
+<script language="Javascript" type="text/javascript">
+	//http://stackoverflow.com/questions/36464821/check-if-all-elements-in-an-array-are-present-in-another
+	console.log("Test");
+	
+	function translatePigLatin(str) {
+		//refactor regExp (or not needed use []) and create empty holder string to avoid using two returns
+		var vowelsReg = /(a|e|u|i|o)/;
+		if(str.charAt(0).search(vowelsReg) != -1){
+       		str = str + "way";
+       		return str;
+     	}
+  
+  		var firstVowel = str.search(vowelsReg);
+  		str = str.slice(firstVowel) + str.slice(0,firstVowel) + "ay";
+
+  		return str;
+	}
+
+	console.log(translatePigLatin("consonant"));
+
+  
+  
+</script>
+</body>
+</html>

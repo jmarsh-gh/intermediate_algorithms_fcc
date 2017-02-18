@@ -108,7 +108,7 @@
 			"file": "5_search_and_replace.html",
 			"settings":
 			{
-				"buffer_size": 443,
+				"buffer_size": 445,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -143,7 +143,7 @@
 			"file": "/C/Users/schrobot/Dropbox/github/100DaysOfCode/log.md",
 			"settings":
 			{
-				"buffer_size": 16691,
+				"buffer_size": 17065,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -303,7 +303,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -340,15 +340,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 443,
+						"buffer_size": 445,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								259,
-								259
+								261,
+								261
 							]
 						],
 						"settings":
@@ -359,7 +359,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -445,7 +445,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -454,15 +454,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 16691,
+						"buffer_size": 17065,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								16684,
-								16684
+								17058,
+								17058
 							]
 						],
 						"settings":
@@ -470,10 +470,10 @@
 							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 7845.0,
+						"translation.y": 7869.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
