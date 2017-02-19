@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pig Latin</title>
+</head>
+<body>
+<script language="Javascript" type="text/javascript">
+
+	console.log("Test");
+
+	function fearNotLetter(str) {
+  		for(var i=1; i<str.length; i++){
+    		if(str[i].charCodeAt() !== str[i-1].charCodeAt() + 1){
+     			return String.fromCharCode(str[i-1].charCodeAt() + 1);   
+    		}
+  		}
+  		return undefined;
+	}
+
+	console.log(fearNotLetter("abce"));
+	
+	
+  
+  
+</script>
+</body>
+</html>

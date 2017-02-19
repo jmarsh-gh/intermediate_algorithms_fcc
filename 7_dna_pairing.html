@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DNA Pairing</title>
+</head>
+<body>
+<script language="Javascript" type="text/javascript">
+	
+	console.log("Test");
+	function pairElement(str) {
+  		var arr = [];
+  		var holder = str.split("");
+  		for(var x in holder){
+    		switch(holder[x]){
+      		case "G": 
+        		arr.push(["G","C"]);
+        		break;
+      		case "C":
+        		arr.push(["C","G"]);
+        		break;
+      		case "A":
+        		arr.push(["A","T"]);
+        		break;
+      		case "T":
+        		arr.push(["T","A"]);
+        		break;
+    		}
+  		}
+  		return arr;
+	}
+
+	console.log(pairElement("GCG"));
+
+  
+  
+</script>
+</body>
+</html>
