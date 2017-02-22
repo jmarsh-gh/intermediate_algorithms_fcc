@@ -10,43 +10,7 @@
 
 	function booWho(bool) {
   		// What is the new fad diet for ghost developers? The Boolean.
-
-  		 //reduce to one array and sort
-
-  var args = Array.prototype.slice.call(arguments);
-
-  args = args.reduce(function(accumulator, currentValue){
-
-    return accumulator.concat(currentValue);
-
-  }).sort();
-
-  //loop if i is === prev delete both (will this work for 3?)
-
-  var uniqueElements = [];
-
-  for(var x in args){
-
-    if(args[x] == args[x-1]){
-
-      //return;
-
-    } else {
-
-      uniqueElements.push(args[x]);
-
-    }
-
-  }
-
-  //use array of uniques to loop arr and push matches
-
- 
-
-  return uniqueElements;
-
-}
-  		return bool;
+  		return (typeof bool === "boolean");
 	}
 
 booWho(null);
