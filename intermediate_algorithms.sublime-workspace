@@ -96,46 +96,37 @@
 	"buffers":
 	[
 		{
-			"file": "9_boo_who.html",
+			"file": "11_convert_html_entities.html",
 			"settings":
 			{
-				"buffer_size": 828,
+				"buffer_size": 283,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "7_dna_pairing.html",
+			"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Intermediate/Search and Replace.md",
 			"settings":
 			{
-				"buffer_size": 646,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Intermediate/Wherefore art thou.md",
-			"settings":
-			{
-				"buffer_size": 1229,
+				"buffer_size": 133,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Intermediate/DNA Pairing.md",
+			"file": "10_sorted_union.html",
 			"settings":
 			{
-				"buffer_size": 1249,
+				"buffer_size": 778,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Intermediate/Pig Latin.md",
+			"file": "9_boo_who.html",
 			"settings":
 			{
-				"buffer_size": 641,
+				"buffer_size": 330,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -144,7 +135,7 @@
 			"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Intermediate.md",
 			"settings":
 			{
-				"buffer_size": 246,
+				"buffer_size": 378,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -155,15 +146,6 @@
 			{
 				"buffer_size": 2201,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/schrobot/Dropbox/github/100DaysOfCode/log.md",
-			"settings":
-			{
-				"buffer_size": 18576,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
 			}
 		}
 	],
@@ -199,13 +181,18 @@
 	},
 	"file_history":
 	[
+		"/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Basic.md",
+		"/C/Users/schrobot/Dropbox/github/100DaysOfCode/log.md",
+		"/C/Users/schrobot/Dropbox/github/intermediate_algorithms_fcc/7_dna_pairing.html",
+		"/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Intermediate/Wherefore art thou.md",
+		"/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Intermediate/DNA Pairing.md",
+		"/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Intermediate/Pig Latin.md",
 		"/C/Users/schrobot/Dropbox/github/intermediate_algorithms_fcc/4_wherefore_art_thou.html",
 		"/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Intermediate/Roman Numeral Converter.md",
 		"/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Shortcuts.md",
 		"/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Projects/Score Keeper.md",
 		"/C/Users/schrobot/Dropbox/VS/Algorithms/FCC Basic/2 Factorialise a Number.htm",
 		"/C/Users/schrobot/Dropbox/VS/Algorithms/FCC Basic/1 Reverse a string.htm",
-		"/C/Users/schrobot/Dropbox/github/100DaysOfCode/log.md",
 		"/C/Users/schrobot/Dropbox/github/twitch_viewer_fcc/todo.md",
 		"/C/Users/schrobot/Dropbox/github/twitch_viewer_fcc/css/style.css",
 		"/C/Users/schrobot/Dropbox/github/twitch_viewer_fcc/js/logic.js",
@@ -321,24 +308,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "9_boo_who.html",
+					"file": "11_convert_html_entities.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 828,
+						"buffer_size": 283,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								511,
-								511
+								223,
+								223
 							]
 						],
 						"settings":
@@ -349,80 +336,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "7_dna_pairing.html",
+					"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Intermediate/Search and Replace.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 646,
+						"buffer_size": 133,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								613,
-								152
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Intermediate/Wherefore art thou.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1229,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1211,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Intermediate/DNA Pairing.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1249,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								388,
-								388
+								124,
+								124
 							]
 						],
 						"settings":
@@ -435,57 +366,29 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Intermediate/Pig Latin.md",
+					"buffer": 2,
+					"file": "10_sorted_union.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 641,
+						"buffer_size": 778,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								562,
-								562
+								66,
+								66
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Intermediate.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 246,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								242,
-								242
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -495,7 +398,63 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 3,
+					"file": "9_boo_who.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 330,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								278,
+								278
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Algorithms/FCC Intermediate.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 378,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								376,
+								376
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "/C/Users/schrobot/Dropbox/github/sandbox/sandbox.wiki/Github-Wiki-Guide.md",
 					"semi_transient": false,
 					"settings":
@@ -507,8 +466,8 @@
 						"selection":
 						[
 							[
-								36,
-								13
+								804,
+								804
 							]
 						],
 						"settings":
@@ -518,38 +477,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 540.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/C/Users/schrobot/Dropbox/github/100DaysOfCode/log.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 18576,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								18214,
-								18214
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 8673.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -624,6 +555,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"C:\\Users\\schrobot\\Dropbox\\github\\sandbox\\sandbox.wiki\\Algorithms\\FCC Basic.sublime-workspace"
+			]
 		],
 		"width": 380.0
 	},
